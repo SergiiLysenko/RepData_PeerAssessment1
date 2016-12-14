@@ -1,9 +1,9 @@
 
 ------------------------------
-title: "Reproducible Research: Peer Assessment 1"
-author: "Sergii Lysenko"
-date: "December 14, 2016"
-output: html_document
+* title: "Reproducible Research: Peer Assessment 1"
+* author: "Sergii Lysenko"
+* date: "December 14, 2016"
+* output: html_document
 
 ------------------------------
 
@@ -47,11 +47,11 @@ mediansteps <- median(steps_by_day$total)
 
 print (meansteps)
 ```
-## [1] 10766.19
+[1] 10766.19
 ```{r}
 print (mediansteps)
 ```
-## [1] 10765
+[1] 10765
 
 ```{r}
 #=================================
