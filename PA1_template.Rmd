@@ -86,8 +86,9 @@ print (avgadata1 [max_row,])
 library(VIM)
 
 aggr_plot <- aggr(adata, col=c('blue','red'), numbers=TRUE, sortVars=TRUE, labels=names(adata), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
-
-
+```
+![Visual representation can be obtained using the VIM package](instructions_fig/6.png) 
+```{r}
 # Find the NA positions
 na1 <- which(is.na(adata$steps))
 
@@ -106,8 +107,10 @@ sum_data <- aggregate(adata$steps, by=list(adata$date), sum)
 names(sum_data) <- c("date", "total")
 sum_data$date <- as.Date(sum_data$date)
 ggplot(sum_data,aes(x=date,y=total))+geom_bar(stat="identity") + ylab("Daily Steps") + xlab("Date") + ggtitle("Histogram of total number of steps taken each day (NA replaced by mean value)")
+```
 
-
+![Histogram of the total number of steps taken each day after missing values are imputed](instructions_fig/7.png) 
+```{r}
 #The sum_data data frame can be used to calculate the mean and median number of steps per day as follows:
 
 mean(sum_data$total)
@@ -139,3 +142,4 @@ ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +
         xlab("5-minute interval") + ylab("Number of steps")
 
 ```
+![Histogram of activity patterns between weekdays and weekends](instructions_fig/8.png) 
