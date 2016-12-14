@@ -35,6 +35,7 @@ ggplot(steps_by_day,aes(x=date,y=total),type = "l")+geom_bar(stat="identity") + 
 
 ```
 ![Histogram of the total number of steps taken each day](instructions_fig/2.png) 
+
 ## What is the average daily activity pattern?
 
 ```{r}
@@ -57,14 +58,20 @@ plot(avgadata1$interval, avgadata1$steps, type='l',col=2,
      main="Average number of steps over all days", xlab="Interval", 
      ylab="Average number of steps")
 
+
+
+```
+![Time series plot of the average number of steps taken](instructions_fig/4.png) 
+
+```{r}
 #=================================
 ## 5.The 5-minute interval that, on average, contains the maximum number of steps 
 #=================================
 
 max_row<-which.max(avgadata1$steps)
 print (avgadata1 [max_row,])
-```
 
+```
 
 
 ## Imputing missing values
