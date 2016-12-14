@@ -46,8 +46,14 @@ meansteps <- mean(steps_by_day$total)
 mediansteps <- median(steps_by_day$total)
 
 print (meansteps)
+```
+## [1] 10766.19
+```{r}
 print (mediansteps)
+```
+## [1] 10765
 
+```{r}
 #=================================
 ## 4. Time series plot of the average number of steps taken
 #=================================
