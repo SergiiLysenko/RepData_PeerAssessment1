@@ -4,6 +4,7 @@ title: "Reproducible Research: Peer Assessment 1"
 author: "Sergii Lysenko"
 date: "December 14, 2016"
 output: html_document
+
 ------------------------------
 
 ## Loading and preprocessing the data
@@ -33,7 +34,7 @@ library(ggplot2)
 ggplot(steps_by_day,aes(x=date,y=total),type = "l")+geom_bar(stat="identity") + ylab("Daily Steps") + xlab("Date") + ggtitle("Histogram of total number of steps taken each day")
 
 ```
-
+![Histogram of the total number of steps taken each day](instructions_fig/2.png) 
 ## What is the average daily activity pattern?
 
 ```{r}
