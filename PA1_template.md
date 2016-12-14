@@ -71,12 +71,15 @@ print (meansteps)
 ## [1] 10766.19
 ```
 
+
 ```r
 print (mediansteps)
 ```
+
 ```
 ## [1] 10765
 ```
+
 
 ```r
 #=================================
@@ -194,7 +197,6 @@ aggr_plot <- aggr(adata, col=c('blue','red'), numbers=TRUE, sortVars=TRUE, label
 ```
  
 
-
 ```r
 # Find the NA positions
 na1 <- which(is.na(adata$steps))
@@ -218,8 +220,6 @@ ggplot(sum_data,aes(x=date,y=total))+geom_bar(stat="identity") + ylab("Daily Ste
 
 ![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
- 
-
 The sum_data data frame can be used to calculate the mean and median number of steps per day as follows:
 
 ```r
@@ -229,6 +229,8 @@ mean(sum_data$total)
 ```
 ## [1] 10766.19
 ```
+
+
 ```r
 median(sum_data$total)
 ```
@@ -236,8 +238,8 @@ median(sum_data$total)
 ```
 ## [1] 10766.19
 ```
-Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval
 
+Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval
 
 ## Are there differences in activity patterns between weekdays and weekends?
 

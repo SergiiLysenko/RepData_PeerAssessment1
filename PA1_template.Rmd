@@ -11,7 +11,7 @@ Reproducible Research Peer Assessment Assignment - Week #2
 
 The raw data is pre-processed to allow easy analysis and address questions about the data.
 
-```{r}
+```{r, echo=TRUE}
 library(dplyr)
 #Read data from Dataset: Activity monitoring data
 adata <- read.csv("./activity.csv")
@@ -25,7 +25,7 @@ steps_by_day <- summarise(adata_byday, total = sum(steps))
 
 ## What is mean total number of steps taken per day?
 
-```{r}
+```{r, echo=TRUE, warning=FALSE}
 library(ggplot2)
 #=================================
 ## 2.Histogram of the total number of steps taken each day
@@ -34,11 +34,11 @@ library(ggplot2)
 ggplot(steps_by_day,aes(x=date,y=total),type = "l")+geom_bar(stat="identity") + ylab("Daily Steps") + xlab("Date") + ggtitle("Histogram of total number of steps taken each day")
 
 ```
-![Histogram of the total number of steps taken each day](instructions_fig/2.png) 
+
 
 ## What is the average daily activity pattern?
 
-```{r}
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 #=================================
 ## 3. Mean and median number of steps taken each day
 #=================================
@@ -47,13 +47,12 @@ mediansteps <- median(steps_by_day$total)
 
 print (meansteps)
 ```
-[1] 10766.19
-```{r}
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 print (mediansteps)
 ```
-[1] 10765
 
-```{r}
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 #=================================
 ## 4. Time series plot of the average number of steps taken
 #=================================
@@ -67,9 +66,8 @@ plot(avgadata1$interval, avgadata1$steps, type='l',col=2,
 
 
 ```
-![Time series plot of the average number of steps taken](instructions_fig/4.png) 
 
-```{r}
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 #=================================
 ## 5.The 5-minute interval that, on average, contains the maximum number of steps 
 #=================================
@@ -78,10 +76,9 @@ max_row<-which.max(avgadata1$steps)
 print (avgadata1 [max_row,])
 
 ```
-№104  interval = 835    steps = 206.1698
 
 ## Imputing missing values
-```{r}
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 #=================================
 ## 6.Code to describe and show a strategy for imputing missing data 
 #=================================
@@ -93,9 +90,8 @@ library(VIM)
 
 aggr_plot <- aggr(adata, col=c('blue','red'), numbers=TRUE, sortVars=TRUE, labels=names(adata), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
 ```
-![Visual representation can be obtained using the VIM package](instructions_fig/6.png) 
-
-```{r}
+ 
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 # Find the NA positions
 na1 <- which(is.na(adata$steps))
 
@@ -116,24 +112,19 @@ sum_data$date <- as.Date(sum_data$date)
 ggplot(sum_data,aes(x=date,y=total))+geom_bar(stat="identity") + ylab("Daily Steps") + xlab("Date") + ggtitle("Histogram of total number of steps taken each day (NA replaced by mean value)")
 ```
 
-![Histogram of the total number of steps taken each day after missing values are imputed](instructions_fig/7.png) 
-
 The sum_data data frame can be used to calculate the mean and median number of steps per day as follows:
-```{r}
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 mean(sum_data$total)
 ```
-[1] 10766.19
-```{r}
+
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 median(sum_data$total)
 ```
-[1] 10766.19
-
 
 Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval
 
-
 ## Are there differences in activity patterns between weekdays and weekends?
-```{r}
+```{r, echo=TRUE, message=TRUE, warning=FALSE}
 
 #=================================
 ## 8.Histogram of the total number of steps taken each day after missing values are imputed
@@ -153,4 +144,4 @@ ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +
         xlab("5-minute interval") + ylab("Number of steps")
 
 ```
-![Histogram of activity patterns between weekdays and weekends](instructions_fig/8.png) 
+ 
