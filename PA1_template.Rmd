@@ -78,7 +78,8 @@ max_row<-which.max(avgadata1$steps)
 print (avgadata1 [max_row,])
 
 ```
-
+      interval    steps
+104      835     206.1698
 
 ## Imputing missing values
 ```{r}
@@ -94,6 +95,12 @@ library(VIM)
 aggr_plot <- aggr(adata, col=c('blue','red'), numbers=TRUE, sortVars=TRUE, labels=names(adata), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
 ```
 ![Visual representation can be obtained using the VIM package](instructions_fig/6.png) 
+
+ Variables sorted by number of missings: 
+  Variable     Count
+     steps 0.1311475
+      date 0.0000000
+  interval 0.0000000
 ```{r}
 # Find the NA positions
 na1 <- which(is.na(adata$steps))
@@ -116,12 +123,18 @@ ggplot(sum_data,aes(x=date,y=total))+geom_bar(stat="identity") + ylab("Daily Ste
 ```
 
 ![Histogram of the total number of steps taken each day after missing values are imputed](instructions_fig/7.png) 
+
+The sum_data data frame can be used to calculate the mean and median number of steps per day as follows:
 ```{r}
-#The sum_data data frame can be used to calculate the mean and median number of steps per day as follows:
-
 mean(sum_data$total)
+```
+[1] 10766.19
+```{r}
 median(sum_data$total)
+```
+[1] 10766.19
 
+```{r}
 #Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval
 ```
 
