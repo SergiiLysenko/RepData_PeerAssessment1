@@ -70,17 +70,13 @@ print (meansteps)
 ```
 ## [1] 10766.19
 ```
-[1] 10766.19
 
 ```r
 print (mediansteps)
 ```
-
 ```
 ## [1] 10765
 ```
-[1] 10765
-
 
 ```r
 #=================================
@@ -110,7 +106,6 @@ print (avgadata1 [max_row,])
 ##     interval    steps
 ## 104      835 206.1698
 ```
-№104  interval = 835    steps = 206.1698
 
 ## Imputing missing values
 
@@ -234,8 +229,6 @@ mean(sum_data$total)
 ```
 ## [1] 10766.19
 ```
-[1] 10766.19
-
 ```r
 median(sum_data$total)
 ```
@@ -243,9 +236,6 @@ median(sum_data$total)
 ```
 ## [1] 10766.19
 ```
-[1] 10766.19
-
-
 Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval
 
 
