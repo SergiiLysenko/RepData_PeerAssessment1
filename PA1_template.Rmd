@@ -1,11 +1,11 @@
+---
+title: "Reproducible Research: Peer Assessment 1"
+output:
+  html_document:
+    keep_md: true
+---
 
-------------------------------
-* title: "Reproducible Research: Peer Assessment 1"
-* author: "Sergii Lysenko"
-* date: "December 14, 2016"
-* output: html_document
-
-------------------------------
+Reproducible Research Peer Assessment Assignment - Week #2
 
 ## Loading and preprocessing the data
 
@@ -128,10 +128,8 @@ median(sum_data$total)
 ```
 [1] 10766.19
 
-```{r}
-#Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval
-```
 
+Mean and median values are higher after imputing missing data. The reason is that in the original data, there are some days with steps values NA for any interval
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
