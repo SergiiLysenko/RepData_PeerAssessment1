@@ -1,17 +1,10 @@
 
----
+------------------------------
 title: "Reproducible Research: Peer Assessment 1"
 author: "Sergii Lysenko"
 date: "December 14, 2016"
 output: html_document
-
-keep_md: true
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
+------------------------------
 
 ## Loading and preprocessing the data
 
